@@ -11,11 +11,11 @@
     ],
     "autoload": {
         "psr-0": {
-            "Chaplean\\Bundle\\BundleNameBundle": "",
+            "Chaplean\\Bundle\\OutdatedBrowserBundle": "",
             "SymfonyStandard": "app/"
         }
     },
-    "target-dir" : "Chaplean/Bundle/BundleNameBundle",
+    "target-dir" : "Chaplean/Bundle/OutdatedBrowserBundle",
     "repositories": [
         {
             "type": "composer",

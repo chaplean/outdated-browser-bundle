@@ -1,10 +1,27 @@
 <!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="utf-8">
+
+    {% block stylesheets %}
+        {% stylesheets
+        '@OpcaliaFrontBundle/Resources/public/sass/*' filter='compass' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% javascripts
+        'vendor/jquery/dist/jquery.min.js'
+        'vendor/outdated-browser/outdatedbrowser/outdatedbrowser.min.js'
+        '@OpcaliaFrontBundle/Resources/public/js/outdated.js'%}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
 </head>
 <body>
-Title
+    <div id="outdated">
+        {% include 'OpcaliaFrontBundle::outdated.html.twig' %}
+    </div>
 </body>
 </html>
