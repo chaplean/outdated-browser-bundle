@@ -1,60 +1,72 @@
-Getting Started With Chaplean Bundle
-=======================================
+Getting Started With Chaplean Outdated Browser Bundle
+=====================================================
 
-# Prerequisites
+# 1. Add me in AppKernel
 
-Fork me
-
-# Initialization
-
-Installation step process:
-
-1. Replace `BundleName` by name of bundle + files:
-    * ChapleanBundleNameBundle.php
-    * DependencyInjection/ChapleanBundleNameExtension.php
-2. Remove index.feature if is useless
-
-# Scrutinizer
-
-Add the fork project in scrutinizer
-
-Remove the ssh key automaticaly added to bitbucket project deployement keys and add the scrutinizer key to the organisation keys.
-
-# Codeship
-
-Remove the ssh key automaticaly added to bitbucket project deployement keys and add the codeship key to the organisation keys.
-
-Config global:
-
-``` bash
-# Set php version through phpenv. 5.3, 5.4 and 5.5 available
-phpenv local 5.5
-# Copy files
-cp phpunit.xml.dist phpunit.xml
-cp app/config/parameters.yml.dist app/config/parameters.yml
-# Configuration
-echo "memory_limit = 512M" >> ~/.phpenv/versions/5.5/etc/php.ini
-echo "xdebug.max_nesting_level = 250" >> ~/.phpenv/versions/5.5/etc/php.ini
-# Install dependencies through Composer
-composer install --prefer-source --no-interaction
+app/AppKernel.php:
+```php
+...
+    /**
+     * @return array
+     */
+    public function registerBundles()
+    {
+        return array(
+            ...
+            new Chaplean\Bundle\OutdatedBrowserBundle\ChapleanOutdatedBrowserBundle(),
+        );
+    }
+...
 ```
 
-Pipeline Phpunit:
+# 2. Define config (Optionnal)
 
-``` bash
-phpunit --coverage-clover build/logs/clover.xml
-# PHPUnit and Scruti
-wget https://scrutinizer-ci.com/ocular.phar
-php ocular.phar code-coverage:upload --access-token="7c2737daabf4aeb9d382cbde4d3a9cfb6a408fa4ec597c2c92c295e4fbbb4cfc" --format=php-clover build/logs/clover.xml
+app/config/config.yml:
+```yaml
+# default option
+chaplean_outdated_browser:
+    background_color: '#f25648'
+    color: '#ffffff'
+    lower_than: 'transform'
+    template: 'ChapleanOutdatedBrowserBundle:Template:outdated.html.twig'
 ```
 
-Pipeline Behat:
+`lower_than` can take:
 
-``` bash
-# Behat
-nohup bash -c "java -jar bin/selenium-server-standalone-2.45.0.jar 2>&1 &"
-# Launch Web Server
-php bin/console server:start localhost:8080
-# Test
-bin/behat -n
+* "IE11","borderImage"
+* "IE10", "transform" (Default property)
+* "IE9", "boxShadow"
+* "IE8", "borderSpacing"
+
+# 3. Update assetic
+
+Add this bundle in assetic config:
+```yaml
+assetic:
+    bundles: ['ChapleanOutdatedBrowserBundle']
+```
+
+# 4. Add routes
+
+Include a routing in global routing
+
+app/config/routing.yml:
+```yaml
+chaplean_cookie_bundle:
+    resource: "@ChapleanOutdatedBrowserBundle/Resources/config/routing.yml"
+    prefix:   /
+```
+
+# 5. Add script in layout
+
+In layout html add me simply:
+
+Version unminified:
+```html
+<script type="text/javascript" src="{{ path('chaplean-outdated-browser.js') }}"></script>
+```
+
+Version minified:
+```html
+<script type="text/javascript" src="{{ path('chaplean-outdated-browser.min.js') }}"></script>
 ```
