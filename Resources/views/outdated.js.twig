@@ -1,0 +1,50 @@
+{% stylesheets
+    '@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css'
+    %}
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.type = 'text/css';
+    css.href = '{{ asset_url }}';
+    document.getElementsByTagName('head')[0].appendChild(css);
+{% endstylesheets %}
+
+{% javascripts
+    '@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.js'
+    %}
+    var script = document.createElement('script');
+    script.src = '{{ asset_url }}';
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+{% endjavascripts %}
+
+var loop = 0;
+var div = document.createElement('div');
+div.id = 'outdated';
+div.innerHTML = '{{ template|escape('js') }}';
+
+function init() {
+    if (document.body) {
+        document.body.appendChild(div);
+    } else {
+        setTimeout(init, 100);
+    }
+}
+init();
+
+function loadOutdated() {
+    if (typeof outdatedBrowser == 'function') {
+        outdatedBrowser({
+            bgColor: '{{ backgroundColor }}',
+            color: '{{ color }}',
+            lowerThan: '{{ lowerThan }}',
+            languagePath: ''
+        });
+    } else if (loop < 20) {
+        loop++;
+        setTimeout(loadOutdated, 100);
+    } else {
+        console.error('Failed load outdatedBrowser, wanted !');
+    }
+}
+loadOutdated();
+

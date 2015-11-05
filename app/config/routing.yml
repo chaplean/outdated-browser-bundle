@@ -1,3 +1,7 @@
-chaplean_outdated_browser:
+chaplean_outdated_browser_index:
+    path: /
+    defaults: { _controller: ChapleanOutdatedBrowserBundle:Default:index }
+
+chaplean_outdated_browser_bundle:
     resource: "@ChapleanOutdatedBrowserBundle/Resources/config/routing.yml"
     prefix:   /

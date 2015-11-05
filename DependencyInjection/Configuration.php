@@ -13,12 +13,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * {@inheritdoc}
+     * @return TreeBuilder
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('chaplean_outdated_browser');
+
+        $rootNode
+            ->children()
+                ->scalarNode('background_color')->defaultValue('#f25648')->end()
+                ->scalarNode('color')->defaultValue('#ffffff')->end()
+                ->scalarNode('lower_than')->defaultValue('transform')->end()
+                ->scalarNode('template')->defaultValue('ChapleanOutdatedBrowserBundle:Template:outdated.html.twig')->end()
+            ->end();
+
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

@@ -1,0 +1,3 @@
+chaplean_outdated_browser.js:
+    path: /outdated.js
+    defaults: { _controller: ChapleanOutdatedBrowserBundle:Outdated:outdated }

@@ -71,3 +71,6 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+
+chaplean_outdated_browser:
+    lower_than: -moz-border-radius-bottomright
