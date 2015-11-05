@@ -1,20 +1,18 @@
 {% stylesheets
     '@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css'
     %}
-    var css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.type = 'text/css';
-    css.href = '{{ asset_url }}';
-    document.getElementsByTagName('head')[0].appendChild(css);
+var css = document.createElement('link');
+css.rel = 'stylesheet';
+css.type = 'text/css';
+css.href = '{{ asset_url }}';
+document.getElementsByTagName('head')[0].appendChild(css);
 {% endstylesheets %}
-
 {% javascripts
     '@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.js'
     %}
-    var script = document.createElement('script');
-    script.src = '{{ asset_url }}';
-
-    document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');
+script.src = '{{ asset_url }}';
+document.getElementsByTagName('head')[0].appendChild(script);
 {% endjavascripts %}
 
 var loop = 0;
@@ -25,6 +23,7 @@ div.innerHTML = '{{ template|escape('js') }}';
 function init() {
     if (document.body) {
         document.body.appendChild(div);
+        loadOutdated();
     } else {
         setTimeout(init, 100);
     }
@@ -46,5 +45,3 @@ function loadOutdated() {
         console.error('Failed load outdatedBrowser, wanted !');
     }
 }
-loadOutdated();
-
