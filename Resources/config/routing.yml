@@ -1,0 +1,7 @@
+chaplean-outdated-browser.js:
+    path: /chaplean-outdated-browser.js
+    defaults: { _controller: ChapleanOutdatedBrowserBundle:Outdated:outdated }
+
+chaplean-outdated-browser.min.js:
+    path: /chaplean-outdated-browser.min.js
+    defaults: { _controller: ChapleanOutdatedBrowserBundle:Outdated:outdated, uglify: true }
