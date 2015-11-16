@@ -1,0 +1,16 @@
+{% stylesheets
+'@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css'
+%}
+<link type="text/css" rel="stylesheet" href="{{ asset_url }}">
+{% endstylesheets %}
+
+{% javascripts
+'@ChapleanOutdatedBrowserBundle/Resources/public/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.js'
+%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% set min = '' %}
+{% if app.environment in ['prod', 'preprod'] %}
+    {% set min = '.min' %}
+{% endif %}
+<script language="javascript" src="{{ path('chaplean-outdated-browser' ~ min ~ '.js') }}"></script>

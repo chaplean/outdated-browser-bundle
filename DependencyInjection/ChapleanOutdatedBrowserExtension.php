@@ -28,6 +28,7 @@ class ChapleanOutdatedBrowserExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
+        $container->setParameter('chaplean_outdated_browser', $config);
         foreach ($config as $key => $parameter) {
             $container->setParameter('chaplean_outdated_browser.' . $key, $parameter);
         }
