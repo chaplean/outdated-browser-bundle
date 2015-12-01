@@ -1,1 +1,6 @@
-#services:
+services:
+    chaplean_cms.cms_extension:
+        class: Chaplean\Bundle\OutdatedBrowserBundle\Twig\Extension\OutdatedBrowserTwigExtension
+        arguments: [%chaplean_outdated_browser%, @twig]
+        tags:
+            - { name: 'twig.extension' }

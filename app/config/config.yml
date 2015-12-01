@@ -73,4 +73,4 @@ doctrine:
         auto_mapping: true
 
 chaplean_outdated_browser:
-    lower_than: property_doesnt_exist
+    lower_than: property_doesnt_exist_for_browser
