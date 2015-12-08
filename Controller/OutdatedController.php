@@ -23,12 +23,7 @@ class OutdatedController extends Controller
      */
     public function outdatedAction($uglify = false)
     {
-        $script = $this->renderView('ChapleanOutdatedBrowserBundle::outdated.js.twig', array(
-            'template'   => $this->renderView($this->getParameter('chaplean_outdated_browser.template')),
-            'backgroundColor' => $this->getParameter('chaplean_outdated_browser.background_color'),
-            'color' => $this->getParameter('chaplean_outdated_browser.color'),
-            'lowerThan' => $this->getParameter('chaplean_outdated_browser.lower_than'),
-        ));
+        $script = $this->renderView('ChapleanOutdatedBrowserBundle::outdated.js.twig');
 
         if ($uglify) {
             $packer = new GK\JavascriptPacker($script);
