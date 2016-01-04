@@ -15,7 +15,6 @@
         },
         "classmap": [ "app/AppKernel.php"]
     },
-    "target-dir" : "Chaplean/Bundle/OutdatedBrowserBundle",
     "repositories": [
         {
             "type": "composer",
