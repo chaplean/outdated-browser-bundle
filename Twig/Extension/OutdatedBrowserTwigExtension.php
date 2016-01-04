@@ -17,6 +17,11 @@ class OutdatedBrowserTwigExtension extends \Twig_Extension implements \Twig_Exte
     private $parametersOutdatedBrowser;
 
     /**
+     * @var \Twig_Environment
+     */
+    private $templating;
+
+    /**
      * OutdatedBrowserTwigExtension constructor.
      *
      * @param array             $parametersOutdatedBrowser
@@ -34,7 +39,7 @@ class OutdatedBrowserTwigExtension extends \Twig_Extension implements \Twig_Exte
     public function getFunctions()
     {
         return array(
-            'chaplean_outdatedbrowser' => new \Twig_Function_Method($this, 'chapleanOutdatedbrowser', array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('chaplean_outdatedbrowser', array($this, 'chapleanOutdatedbrowser'), array('is_safe' => array('html'))),
         );
     }
 
