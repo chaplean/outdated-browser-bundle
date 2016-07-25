@@ -52,7 +52,7 @@ Include a routing in global routing
 
 app/config/routing.yml:
 ```yaml
-chaplean_cookie_bundle:
+chaplean_outdated_browser_bundle:
     resource: "@ChapleanOutdatedBrowserBundle/Resources/config/routing.yml"
     prefix:   /
 ```

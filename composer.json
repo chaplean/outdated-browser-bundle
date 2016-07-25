@@ -18,7 +18,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://satis.chaplean.com"
+            "url": "https://satis.chaplean.com"
         }
     ],
     "require": {
@@ -32,11 +32,12 @@
         "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "gkralik/php-uglifyjs": "^1.0.0"
+        "gkralik/php-uglifyjs": "^1.0.0",
+        "jms/security-extra-bundle": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
-        "chaplean/unit-bundle": "^2.0",
+        "chaplean/unit-bundle": "^4.0",
         "chaplean/coding-standard": "1.1.*"
     },
     "scripts": {
