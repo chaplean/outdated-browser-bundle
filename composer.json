@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "Chaplean",
-            "homepage": "http://chaplean.com/"
+            "homepage": "https://www.chaplean.coop"
         }
     ],
     "autoload": {
@@ -18,11 +18,11 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://satis.chaplean.com"
+            "url": "https://satis.chaplean.coop"
         }
     ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.1",
         "gkralik/php-uglifyjs": "^1.0.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "jms/security-extra-bundle": "^1.5",

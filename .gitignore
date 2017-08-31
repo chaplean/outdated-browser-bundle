@@ -1,13 +1,42 @@
-.idea
-/web/bundles/
-/app/config/parameters.yml
-/var
-/build/
+# Managed by Composer
+/bin
 /vendor
-/bin/*
-!bin/console
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# PHPUnit
 /phpunit.xml
-behat.yml
-*.php~
-!.gitkeep
+/phpunit-*.xml
+
+# Auto-saved files
+*~
+
+# Mac
+.DS_store
+
+# PhpStorm
+.idea
+
+# Compass
+.sass-cache/
+
+# Composer
+/composer.phar
+
+# Build data
+/build/
+
+# Karma coverage
+coverage/
+
+# Codeship
+/codeship.aes
+
+# Database
+/.db
+
+app/config/parameters.yml
+var/*
 !var/.gitkeep
