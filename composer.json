@@ -11,9 +11,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chaplean\\Bundle\\OutdatedBrowserBundle\\": ""
-        },
-        "classmap": [ "app/AppKernel.php"]
+            "Chaplean\\Bundle\\OutdatedBrowserBundle\\": "",
+            "Tests\\": "Tests"
+        }
     },
     "repositories": [
         {
