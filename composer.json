@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chaplean\\Bundle\\OutdatedBrowserBundle\\": "",
+            "Chaplean\\Bundle\\OutdatedBrowserBundle\\": ""
         }
     },
     "autoload-dev": {
