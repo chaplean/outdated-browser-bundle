@@ -12,6 +12,10 @@
     "autoload": {
         "psr-4": {
             "Chaplean\\Bundle\\OutdatedBrowserBundle\\": "",
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Tests\\": "Tests"
         },
         "classmap": [
