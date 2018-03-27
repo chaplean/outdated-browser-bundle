@@ -1,6 +1,10 @@
 services:
+    _defaults:
+        autowire: true
+        public: true
+
     chaplean_outdated_browser.cms_extension:
         class: Chaplean\Bundle\OutdatedBrowserBundle\Twig\Extension\OutdatedBrowserTwigExtension
-        arguments: [%chaplean_outdated_browser%, @twig]
+        arguments: ['%chaplean_outdated_browser%', '@twig']
         tags:
             - { name: 'twig.extension' }
